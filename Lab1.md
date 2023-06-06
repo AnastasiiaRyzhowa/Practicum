@@ -26,4 +26,5 @@
 14. Добавить несколько коммитов произвольного содержимого
 15. Создать пулл реквест в данный репозиторий
 ![screenshot](https://github.com/AnastasiiaRyzhowa/Practicum/blob/main/im/cr1.jpg)
+![screenshot](https://github.com/AnastasiiaRyzhowa/Practicum/blob/main/im/cr2.jpg)
 
