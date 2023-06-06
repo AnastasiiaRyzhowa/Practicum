@@ -25,6 +25,5 @@
 13. Просмотреть историю коммитов
 14. Добавить несколько коммитов произвольного содержимого
 15. Создать пулл реквест в данный репозиторий
-![screenshot](images/11.png)
-![screenshot](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)
+![screenshot](https://github.com/AnastasiiaRyzhowa/Practicum/blob/main/im/cr1.jpg)
 
