@@ -3,25 +3,22 @@ import pickle#преобразования объектов или структ�
 import cryptocode
 
 HOST = '127.0.0.1'
-PORT = 9090
-
+PORT = 8080
 sock = socket.socket()
 sock.bind((HOST, PORT))
 sock.listen(1)
 conn, addr = sock.accept()
-
-p, g, A = pickle.loads(conn.recv(1024))  # скачали данные 
-b = 8
+p, g, A = pickle.loads(conn.recv(1024))  # скачали данные
+b = 9
 B = g ** b % p
-conn.send(pickle.dumps(B))  # отправляем данные обратно
-
+conn.send(pickle.dumps(B))  # отправляем данные обратно клиенту
 K = A ** b % p
 key = str(K)
-print('Сообщение:', key)
-
+word = 'Hello word'
+print('Сообщение:', word, key)
 #применяя ключ шифруем сообщения
-cryptmess = cryptocode.encrypt(msg, key)  
-conn.send(pickle.dumps(msgEn))
-print('Отправленное сообщение:', cryptmess)
+cipherword = cryptocode.encrypt(word, key)
+conn.send(pickle.dumps(cipherword))
+print('Отправленное сообщение:', cipherword)
 
 conn.close()
