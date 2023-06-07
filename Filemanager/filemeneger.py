@@ -1,5 +1,5 @@
-import os
-import shutil
+import os # позволяют определять тип операционной системы, получать доступ к переменным окружения, управлять директориями и файлами:
+import shutil #работать с файловым объектом и предлагает нам возможность копировать и удалять файлы
 from pathlib import Path
 
 menu = '''
@@ -17,34 +17,34 @@ menu = '''
 '''
 
 
-def create_folder(name):
+def create_folder(name): #Создание каталога и установка режима доступа к нему.
     os.mkdir(name)
 
 
-def delete_folder(name):
+def delete_folder(name): #Удаление папки независимо от того, содержит ли она файлы, доступные только для чтения
     shutil.rmtree(name, ignore_errors=True)
 
 
 def move_to_folder(path, root_folder):
     while True:
-        os.chdir(input("Введите имя папки, в которую хотите перейти, или путь: "))
+        os.chdir(input("Введите имя папки, в которую хотите перейти, или путь: ")) #Смена рабочей директории из кода
         if root_folder in os.getcwd().split('/'):
             break
         else:
             print("Нельзя выходить из корневой папки")
 
 
-def create_file(file_name):
+def create_file(file_name): # Создание пустых файлов с указанием имени
     with open(file_name, "w", encoding="utf-8") as file:
         file.write
 
 
-def write_file(file_name):
+def write_file(file_name): #Запись текста в файл
     with open(file_name, "w", encoding="utf-8") as file:
         file.write(input("Введите текст, который хотите написать: "))
 
 
-def read_file(file_name):
+def read_file(file_name): #Просмотр содержимого текстового файла
     with open(file_name, "r", encoding="utf-8") as file:
         lines = file.readlines()
         print(f"Файл {file_name} содержит: ")
@@ -52,26 +52,26 @@ def read_file(file_name):
             print(line)
 
 
-def remove_file(file_name):
+def remove_file(file_name): # Удаление файлов по имени
     os.remove(file_name)
 
 
 def copy_file():
     file_name = input("Введите название файла, который хотите скопировать: ")
     dict_name = input("Укажите в какую папку хоитите скопировать или путь: ")
-    shutil.copy(file_name, dict_name)
+    shutil.copy(file_name, dict_name) # Копирование файлов из одной папки в другую
 
 
 def move_file():
     file_name = input("Введите название файла, который хотите скопировать: ")
     dict_name = input("Укажите в какую папку хоитите скопировать или путь: ")
-    shutil.move(file_name, dict_name)
+    shutil.move(file_name, dict_name) # Перемещение файлов;
 
 
 def rename_file():
     file_name = input("Введите название файла, который хотите переименовать: ")
     new_file_name = input("Введите новое название файла: ")
-    os.rename(file_name, new_file_name)
+    os.rename(file_name, new_file_name) #Выход из программы
 
 
 print("Настройка: Сначала укажите папку, в которой будем работать")
